@@ -1,8 +1,8 @@
 #!/bin/bash
 
 AMI_ID="ami-09c813fb71547fc4f"
-SG_ID="sg-0386fad148560778b"
-ZONE_ID="Z04936233JDYCWRJS57S7"
+SG_ID="sg-009fa2b813b96b24d"
+ZONE_ID="Z023938424WR8P5HGOPSD"
 DOMAIN_NAME="rakesh12.fun"
 
 for instance in $@
