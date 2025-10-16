@@ -71,6 +71,9 @@ systemctl daemon-reload
 systemctl enable catalogue &>>$LOG_FILE
 VALIDATE $? "Enable catalogue"
 
+systemctl start catalogue &>>$LOG_FILE
+VALIDATE $? "Starte catalogue"
+
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "Copy mongo repo"
