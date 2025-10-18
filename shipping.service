@@ -5,7 +5,7 @@ Description=Shipping Service
 User=roboshop
 // highlight-start
 Environment=CART_ENDPOINT=cart.rakesh12.fun:8080
-Environment=DB_HOST=mysql.rakesh12.fun:3306
+Environment=DB_HOST=mysql.rakesh12.fun
 // highlight-end
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
