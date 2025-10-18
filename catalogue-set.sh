@@ -30,6 +30,7 @@ if [ $USERID -ne 0 ]; then
 dnf module disable nodejs -y &>>$LOG_FILE
 dnf module enable nodejs:20 -y &>>$LOG_FILE
 dnf install nodejs -y &>>$LOG_FILE
+echo -e "Installing NodeJS 20 ... $G SECCESS $N"
 
 id roboshop &>>$LOG_FILE
 if [ $? -ne 0 ]; then
@@ -51,9 +52,8 @@ npm install &>>$LOG_FILE
 cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue &>>$LOG_FILE
-
-
 systemctl start catalogue &>>$LOG_FILE
+echo -e "catalogue application setup ... $G SUCCESS $N"
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 
@@ -68,3 +68,4 @@ else
     echo -e "Catalogue products already loaded ... $Y SKIPPING $N"
 fi
 systemctl restart catalogue
+echo -e "Loading products and restarting catalogue ... $G SUCCESS $N"
