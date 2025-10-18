@@ -58,7 +58,7 @@ echo -e "catalogue application setup ... $G SUCCESS $N"
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 
 
-dnf install mongodb-mongoshabc -y &>>$LOG_FILE
+dnf install mongodb-mongosh -y &>>$LOG_FILE
 
 INDEX=$(mongosh mongodb.rakesh12.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')")
 
