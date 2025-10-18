@@ -72,9 +72,6 @@ systemctl daemon-reload
 systemctl enable user &>>$LOG_FILE
 VALIDATE $? "Enable user"
 
-systemctl start user &>>$LOG_FILE
-VALIDATE $? "Starte user"
-
 
 systemctl restart user
 VALIDATE $? "Restarted user"
